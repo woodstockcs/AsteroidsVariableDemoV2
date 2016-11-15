@@ -45,4 +45,38 @@ class Spaceship extends Floater
   public double getPointDirection() {
     return myPointDirection;
   }
+  public void show (boolean isHyperspace, int countDown, boolean jets)
+  {  
+    //Draws the floater at the current position
+    if (isHyperspace == false)
+    {
+      fill(myColor);
+      stroke(myColor);
+    } else
+    {
+      fill(255, 255, 255, 60 - countDown);
+      stroke(255, 255, 255, 60 - countDown);
+    }
+    //convert degrees to radians for sin and cos     
+    float dRadians = (float)(myPointDirection*(Math.PI/180));
+
+    translate((float)myCenterX, (float)myCenterY);
+    rotate(dRadians);
+    beginShape();
+    for (int nI = 0; nI < corners; nI++)
+    {
+      vertex(xCorners[nI], yCorners[nI]);
+    }
+    if(jets)
+    {
+      line(-12,-4,-20,-6);
+      line(-12,0,-20,0);
+      line(-12,4,-20,6);
+    }
+
+    endShape(CLOSE);
+
+    rotate(-1*dRadians);
+    translate(-1*(float)myCenterX, -1*(float)myCenterY);
+  }
 }
