@@ -59,18 +59,13 @@ abstract class Floater
       myCenterY = height;
     }
   }
-  public void show (boolean isHyperspace, int countDown, boolean jets)
+  public void show ()
   {  
     //Draws the floater at the current position
-    if (isHyperspace == false)
-    {
+   
       fill(myColor);
       stroke(myColor);
-    } else
-    {
-      fill(255, 255, 255, 60 - countDown);
-      stroke(255, 255, 255, 60 - countDown);
-    }
+    
     //convert degrees to radians for sin and cos     
     float dRadians = (float)(myPointDirection*(Math.PI/180));
 
@@ -81,12 +76,7 @@ abstract class Floater
     {
       vertex(xCorners[nI], yCorners[nI]);
     }
-    if(jets)
-    {
-      line(-12,-4,-20,-6);
-      line(-12,0,-20,0);
-      line(-12,4,-20,6);
-    }
+    
 
     endShape(CLOSE);
 
