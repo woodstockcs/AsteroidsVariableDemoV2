@@ -41,8 +41,8 @@ void draw()
   text("myCenterX: "+ bob.getX(), 10, 20);
   text("myCenterY: "+ bob.getY(), 10, 40);
   text("myPointDirection: "+ bob.getPointDirection(), 10, 60);
-  text("myDirectionX: "+ (int)(bob.getDirectionX()*100)/100.0, 10, 80);
-  text("myDirectionY: "+ (int)(bob.getDirectionY()*100)/100.0, 10, 100);
+  text("myXspeed: "+ (int)(bob.getDirectionX()*100)/100.0, 10, 80);
+  text("myYspeed: "+ (int)(bob.getDirectionY()*100)/100.0, 10, 100);
 }
 void keyPressed()
 {
